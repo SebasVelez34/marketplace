@@ -1,20 +1,24 @@
 import React from 'react';
-import PropTypes from 'prop-types';
-import styles from './LeftAside.module.css';
+import { Link } from 'react-router-dom';
 
-const LeftAside = () => (
-  	<aside id="side-menu" className={styles.LeftAside,`leftAside well span3 oc`} data-testid="LeftAside" role="navigation">
+const LeftAside = (props) => (
+  	<aside id="side-menu" className="leftAside well span3 oc" data-testid="LeftAside" role="navigation">
     	<ul className="nav nav-list">
-			<li className="nav-header">Title 1</li>
-			<li><a href="#">Sube Menu Link</a></li>
-			<li><a href="#">Sube Menu Link</a></li>
-			<li><a href="#">Sube Menu Link</a></li>
+			<li className="nav-header">Categories</li>
+			<li><Link to={'/'}>All products</Link></li>
+			{
+				props.categories ?
+				props.categories.map( category => {
+					return (
+						<li onClick={()=> { props.onClick(category) }}>
+							{ category.charAt(0).toUpperCase() + category.slice(1)}
+						</li>
+					)
+				})
+				: <></>
+			}
     	</ul>
   	</aside>
 );
-
-LeftAside.propTypes = {};
-
-LeftAside.defaultProps = {};
 
 export default LeftAside;

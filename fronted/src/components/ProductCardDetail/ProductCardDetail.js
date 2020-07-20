@@ -14,9 +14,7 @@ const ProductCardDetail = (props) => (
 			<p>{props.description}</p>
 			<div className="card_footer">
 				<span className="price">${props.price}</span>
-				<a href="#" className="btn">
-					Add to cart
-				</a>
+				<button className="btn" onClick={()=>{ props.onClick(props._id,props.props); }}  value="">Add to cart</button>
 				<Link to='/' className="btn">
 					Back to results
 				</Link>
