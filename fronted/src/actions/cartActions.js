@@ -4,7 +4,7 @@ const axios = require("axios")
 
 const addToCart = (productId) => async (dispatch, getState) =>{
     try {
-        const { data } = await axios.get(`/api/v1/product/${productId}`);
+        const { data } = await axios.get(`/api/v1/products/byId/${productId}`);
         dispatch({ type: CART_ADD_ITEM, payload:{
             product    : data._id,
             name       : data.name,

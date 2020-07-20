@@ -3,6 +3,8 @@ import HomeScreen from '../../screens/HomeScreen/HomeScreen';
 import { Route } from 'react-router-dom';
 import ProductScreen from '../../screens/ProductScreen/ProductScreen';
 import CartScreen from '../../screens/CartScreen/CartScreen';
+import SigninScreen from '../../screens/SigninScreen/SigninScreen';
+import RegisterScreen from '../../screens/RegisterScreen/RegisterScreen';
 
 class Main extends React.Component {
 	constructor(props){
@@ -15,6 +17,8 @@ class Main extends React.Component {
 				<Route path="/" exact={ true} component={HomeScreen} />
 				<Route path="/product/:id" component={ProductScreen} />
 				<Route path="/cart/:id?" component={CartScreen} />
+				<Route path={"/signin"} component={SigninScreen}/>
+				<Route path={"/register"} component={RegisterScreen}/>
 			</main>
 		);
 	}

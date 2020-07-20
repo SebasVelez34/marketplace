@@ -7,13 +7,13 @@ import { BrowserRouter } from 'react-router-dom';
 function App() {
   return (
 	<div className="App">
-		<Navbar/>
 		<BrowserRouter>
+			<Navbar/>
 			<Main/>
 		</BrowserRouter>
-		<footer className="Footer">
+		{/* <footer className="Footer">
 			<div className="title">© 2020 — bd MarketPlace</div>
-		</footer>
+		</footer> */}
 	</div>
   );
 }

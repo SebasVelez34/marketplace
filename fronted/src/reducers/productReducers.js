@@ -13,7 +13,7 @@ function productListReducer(state = { products : [] }, action) {
     }
 }
 
-function productDetailsReducer(state = { product : {} }, action) {
+function productDetailsReducer(state = { product : [] }, action) {
     switch (action.type){
         case constants.PRODUCT_DETAILS_REQUEST:
             return { loading:true };
@@ -39,4 +39,9 @@ function productsCategoriesReducer(state = { categories : [] }, action) {
     }
 }
 
-export { productListReducer, productDetailsReducer, productsCategoriesReducer }
+
+export {
+    productListReducer,
+    productDetailsReducer,
+    productsCategoriesReducer
+}

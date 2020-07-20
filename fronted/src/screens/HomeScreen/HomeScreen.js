@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import LeftAside from '../../components/LeftAside/LeftAside';
 import ContainerProducts from '../../components/ContainerProducts/ContainerProducts';
 import { useSelector, useDispatch } from 'react-redux';
-import { listProducts, productsCategories, listProductsCategory } from '../../actions/productActions';
+import { listProducts, productsCategories, listProductsCategory, searchProducts } from '../../actions/productActions';
 
 function HomeScreen(props){
 	const [title, setTitle] = useState("All Categories");
@@ -14,6 +14,9 @@ function HomeScreen(props){
 	const filterByCategoryHandler = (category) =>{
 		setTitle(category);
 		dispatch(listProductsCategory(category));
+	}
+	const searchHandler = (term)=>{
+		dispatch(searchProducts(term));
 	}
 	useEffect(()=>{
 		dispatch(listProducts());
@@ -28,7 +31,8 @@ function HomeScreen(props){
 				loadingC ? <div>Loading...</div> :
 				errorC   ? <div>{errorC}</div>:
 				<LeftAside categories={categories}
-						   onClick={ filterByCategoryHandler}/>
+						   onClick={ filterByCategoryHandler}
+						   search={ searchHandler }/>
 			}
 			<ContainerProducts products={products}
 							   title={title}
