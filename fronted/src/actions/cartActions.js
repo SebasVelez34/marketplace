@@ -32,11 +32,9 @@ const removeFromCart = (productId) => async (dispatch, getState) =>{
             userInfo
         }
     });
-    if (data.remove) {
-        dispatch({ type: CART_REMOVE_ITEM, payload: productId });
-        const { cart: { cartItems} } = getState();
-        Cookie.set("cartItems", JSON.stringify(cartItems));
-    }
+    dispatch({ type: CART_REMOVE_ITEM, payload: productId });
+    const { cart: { cartItems} } = getState();
+    Cookie.set("cartItems", JSON.stringify(cartItems));
 }
 
 export { addToCart, removeFromCart }

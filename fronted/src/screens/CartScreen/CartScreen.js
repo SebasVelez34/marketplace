@@ -24,7 +24,7 @@ function CartScreen(props) {
 			<h1 class="projTitle">Shopping Cart</h1>
 			<div class="heading cf">
 				<h1>My Cart</h1>
-				<a href="#" class="continue">Continue Shopping</a>
+				<Link to={'/'} className="btn">Continue Shopping</Link>
 			</div>
 			<div class="cart">
 				<ul class="cartWrap">
