@@ -9,7 +9,7 @@ function SigninScreen(props) {
 	const { userInfo,loading, error } = userSignin;
 	const dispatch = useDispatch();
 	useEffect(()=>{
-		if( userInfo.length > 0 ){
+		if( !userInfo ){
 			props.history.push("/");
 		}
 	},[userInfo]);
@@ -23,15 +23,8 @@ function SigninScreen(props) {
 		<div className="signIn" data-testid="SigninScreen">
 			<div className="login">
 				<div className="form">
-					<h2>Create account</h2>
+					<h2>Sign-In</h2>
 					<form onSubmit={submitHandler}>
-						{/* <div className="form-field">
-							<label htmlFor="name">Your name<i className="fa fa-lock"></i></label>
-							<input id="name" type="text" name="name" placeholder="Your name" required onChange={(e) => setName(e.target.value)}/>
-							<svg>
-								<use href="#svg-check" />
-							</svg>
-						</div> */}
 						<div className="form-field">
 							<label htmlFor="login-mail"><i className="fa fa-user"></i></label>
 							<input id="login-mail"

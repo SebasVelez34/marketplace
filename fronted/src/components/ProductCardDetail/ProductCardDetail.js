@@ -4,8 +4,6 @@ import { Link } from 'react-router-dom';
 const ProductCardDetail = (props) => (
 	<div className="containerCardDetail card">
 		<div className="card_left">
-			<a href="#"><i className="fa fa-long-arrow-left left" aria-hidden="true"></i></a>
-			<a href="#"><i className="fa fa-long-arrow-right right" aria-hidden="true"></i></a>
 			<img src={props.image} />
 		</div>
 		<div className="card_right">

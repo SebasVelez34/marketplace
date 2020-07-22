@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import styles from './Navbar.module.css';
 import { Link } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
+import Loader from '../Loader/Loader';
 
 
 function Navbar(props) {
@@ -20,7 +21,7 @@ function Navbar(props) {
 				<ul className="menu">
 					<li><Link to={"/cart"} >Cart</Link></li>
 					{
-						loading ? <div>Loading...</div> :
+						loading ? <Loader/> :
 						error   ? <div>{error}</div>:
 						userInfo.length === 0 ?
 						<>
@@ -30,7 +31,6 @@ function Navbar(props) {
 						:
 						<>
 							<li><a>{`Hello ` + userInfo.name}</a></li>
-							<li><Link to={"/signin"}>Logout</Link></li>
 						</>
 					}
 				</ul>

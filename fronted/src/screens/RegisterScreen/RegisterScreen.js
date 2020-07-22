@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { register } from '../../actions/userActions';
+import Loader from '../../components/Loader/Loader';
 
 function RegisterScreen(props) {
 	const [email,setEmail ]       = useState('');
@@ -11,7 +12,7 @@ function RegisterScreen(props) {
 	const dispatch = useDispatch();
 	useEffect(()=>{
 		if( userInfo ){
-			props.history.push("/");
+			window.open('/','_self');
 		}
 	},[userInfo]);
 
@@ -21,7 +22,7 @@ function RegisterScreen(props) {
 	}
 
   	return (
-		loading ? <div>Loading...</div> :
+		loading ? <Loader/> :
 		error   ? <div>{error}</div>:
  		<div className="signIn" data-testid="RegisterScreen">
 			<div className="login">

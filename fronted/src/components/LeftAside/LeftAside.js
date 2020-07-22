@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
 
 function LeftAside(props){
 	const [ search, setSearch ] = useState("");
@@ -7,7 +6,7 @@ function LeftAside(props){
 		<aside id="side-menu" className="leftAside well span3 oc" data-testid="LeftAside" role="navigation">
 			<ul className="nav nav-list">
 				<li className="nav-header">Categories</li>
-				<li><Link to={'/'}>All products</Link></li>
+				<li onClick={ ()=>{ props.allProducts() } }>All products</li>
 				{
 					props.categories ?
 					props.categories.map( category => {

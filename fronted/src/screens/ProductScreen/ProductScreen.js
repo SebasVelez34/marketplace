@@ -3,6 +3,7 @@ import ProductCardDetail from '../../components/ProductCardDetail/ProductCardDet
 import { useSelector, useDispatch } from 'react-redux';
 import { detailsProduct } from '../../actions/productActions';
 import { addToCart } from '../../functions/addToCart';
+import Loader from '../../components/Loader/Loader';
 
 
 function ProductScreen(props) {
@@ -14,7 +15,7 @@ function ProductScreen(props) {
 		dispatch(detailsProduct(props.match.params.id));
 	}, []);
 	return (
-		loading ? <div>Loading...</div> :
+		loading ? <Loader/> :
 		error   ? <div>{error}</div>:
 		<ProductCardDetail name={product.name}
 						   price={product.price}
