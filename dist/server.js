@@ -69,13 +69,6 @@ app.get("/api/v1/categories", /*#__PURE__*/function () {
   };
 }()); //Serve static
 
-if (process.env.NODE_ENV === 'production') {
-  app.use(_express["default"]["static"]('frontend/build'));
-  app.get('*', function (req, res) {
-    res.sendFile(_path["default"].resolve(__dirname, '../', 'frontend', 'build', 'index.html'));
-  });
-}
-
 var port = process.env.PORT || 5000;
 app.listen(port, function () {
   console.log("Server Started at port ".concat(port));

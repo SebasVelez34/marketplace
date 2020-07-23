@@ -5,15 +5,11 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports["default"] = void 0;
 
-var _dotenv = _interopRequireDefault(require("dotenv"));
-
 var _config = _interopRequireDefault(require("./config"));
 
 var _mongoose = _interopRequireDefault(require("mongoose"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
-
-_dotenv["default"].config();
 
 var mongodbUrl = _config["default"].MONGODB_URL;
 
