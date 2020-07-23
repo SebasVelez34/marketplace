@@ -19,7 +19,7 @@ router.get('/byCategory/:category', async (req,res) =>{
     if(category){
         const products = await Product.find({
             category: {
-                $regex: category,
+                $regex  : category,
                 $options: 'i',
             }
         });

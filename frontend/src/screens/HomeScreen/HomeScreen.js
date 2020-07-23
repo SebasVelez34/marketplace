@@ -31,7 +31,7 @@ function HomeScreen(props){
 	return (
 		loading ? <Loader/> :
 		error   ? <div>{error}</div>:
-		<div className="homeScreen">
+		<div className="homeScreen" data-testid="HomeScreen">
 			{
 				loadingC ? <Loader/> :
 				errorC   ? <div>{errorC}</div>:

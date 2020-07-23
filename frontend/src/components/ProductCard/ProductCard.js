@@ -1,6 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
-import styles from './ProductCard.module.css';
 import { Link } from 'react-router-dom';
 import { addToCart } from '../../functions/addToCart';
 
@@ -14,7 +12,7 @@ const styleImageCard = (url)=>{
 
 function ProductCard(props) {
 	return (
-		<div className={styles.ProductCard,"wrapper"} data-testid="ProductCard">
+		<div className="wrapper" data-testid="ProductCard">
 			<div className="containerCard">
 				<Link to={`/product/${props._id}`}>
 					<div className="top" style={styleImageCard(props.image)}></div>

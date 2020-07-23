@@ -1,17 +1,14 @@
-import React, { useEffect } from 'react';
-import PropTypes from 'prop-types';
-import styles from './Navbar.module.css';
+import React from 'react';
 import { Link } from 'react-router-dom';
-import { useSelector, useDispatch } from 'react-redux';
+import { useSelector } from 'react-redux';
 import Loader from '../Loader/Loader';
 
 
-function Navbar(props) {
+function Navbar() {
 	const userSignin = useSelector(state => state.userSignin);
 	const { userInfo, loading , error } = userSignin;
-	const dispatch = useDispatch();
 	return (
-		<header className={styles.Navbar,`header`} data-testid="Navbar">
+		<header className="header" data-testid="Navbar">
 			<div id="elements-header" className="shadow-1">
 				<a href="/">
 					<img src="/images/logo.png" alt="Logo de la página" className="m-elements-header"/>

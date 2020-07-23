@@ -18,7 +18,6 @@ function CartScreen(props) {
 		dispatch(addToCart(productId));
 		}
 	}, []);
-	console.log(cartItems);
 	return (
 		<div class="wrap cf">
 			<h1 class="projTitle">Shopping Cart</h1>
