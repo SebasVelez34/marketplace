@@ -20,6 +20,7 @@ code {
 
 .containerProducts {
   grid-area: container;
+  width: 95%;
 }
 
 
@@ -65,7 +66,7 @@ img {
 .homeScreen{
   display: grid;
   grid-template-areas: "aside container";
-  grid-template-columns: 25% 1fr;
+  grid-template-columns: 20% 1fr;
   grid-template-rows: 1fr;
   margin: 2%;
 }
